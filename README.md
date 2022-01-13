@@ -2,4 +2,4 @@
 project for pic16b
 X  .  X
 .  O  .
-O  .  X
+O  .  O
