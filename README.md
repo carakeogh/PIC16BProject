@@ -1,5 +1,5 @@
 # PIC16BProject
 project for pic16b
-X  .  .
+X  .  X
 .  .  .
 O  .  .
