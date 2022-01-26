@@ -1,8 +1,8 @@
 # PIC16BProject
 
-**Group Name:** The Drip Gurus
-**Project Topic:** Outfit recommendation webapp
-**Group Members:** Cara Keogh, Patrick Wang, Yu-Hsin Huang
+**Group Name:** The Drip Gurus <br>
+**Project Topic:** Outfit recommendation webapp <br>
+**Group Members:** Cara Keogh, Patrick Wang, Yu-Hsin Huang <br>
 
 ## Abstract
 This project aims to address the problem of people not being able to decide what to wear. Whether they don’t want to spend the time styling themselves or they aren’t sure what items work well together, our model will help them fully utilize their closet. The overall approach to accomplishing this task is to randomly generate outfits based on a large image dataset of clothes and accessories, get user feedback on the outfits, and ultimately produce an outfit recommendation for the user based on their style preferences.
