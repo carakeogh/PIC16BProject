@@ -4,6 +4,10 @@ X  .  X
 .  O  .
 O  .  O
 
+## Abstract
+This project aims to address the problem of people not being able to decide what to wear. Whether they don’t want to spend the time styling themselves or they aren’t sure what items work well together, our model will help them fully utilize their closet. The overall approach to accomplishing this task is to randomly generate outfits based on a large image dataset of clothes and accessories, get user feedback on the outfits, and ultimately produce an outfit recommendation for the user based on their style preferences.
+
+
 ## Resources Required
 We believe that the only resource we will need to complete our project is data. This is because training and testing data is required to build and implement our machine learning/image classification algorithms and recommendator system. Further, we plan to use datasets that contain a wide variety of images in clothes and accessories so that our application can account for more unique styles and clothing that might be less popular or prevalent in the world. 
 
