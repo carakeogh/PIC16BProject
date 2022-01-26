@@ -80,6 +80,6 @@ Meet every Thursday at 8:30pm to recap week + plan for next week
 - Put finishing touches on webapp
 
 **Week 10**
-*(Goal: Achieve Full Success)*
+*(Goal: Achieve Full Success)* ; 
 *3/9- Project Presentations Due*
 - Finish blog post
