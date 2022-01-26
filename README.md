@@ -1,8 +1,8 @@
 # PIC16BProject
-project for pic16b
-X  .  X
-.  O  .
-O  .  O
+
+**Group Name:** The Drip Gurus
+**Project Topic:** Outfit recommendation webapp
+**Group Members:** Cara Keogh, Patrick Wang, Yu-Hsin Huang
 
 ## Abstract
 This project aims to address the problem of people not being able to decide what to wear. Whether they don’t want to spend the time styling themselves or they aren’t sure what items work well together, our model will help them fully utilize their closet. The overall approach to accomplishing this task is to randomly generate outfits based on a large image dataset of clothes and accessories, get user feedback on the outfits, and ultimately produce an outfit recommendation for the user based on their style preferences.
@@ -39,3 +39,47 @@ Our whole program will be implemented as a web application. This comes with many
 Because our program is reliant on the internet, the biggest group of people that will be harmed will be those without reliable access to tech. There isn’t any way for them to interact with our app since it lives on the web. Additionally, there are no limits to the number of clothing styles in the world. Anyone can create and establish their own style, which makes categorizing general styles pretty difficult. People who have clothings that aren’t reflected in the original training set of our algorithms will not get much out of our app since the classifications will not be accurate, thereby hindering the recommendations. 
 
 Overall, a considerable portion of an individual’s spending is spent on apparel because it's essential; people will need to buy clothing at some point in their lives. Clothing offers a way for individuals to express themselves in countless ways, so it may be pretty difficult coming up with unique styles and figuring out what clothing items to purchase. Our application will address this issue and save users time and money that would have normally been spent on picking out the right clothes or deciding what to buy next. Furthermore, because our application will recommend personalized outfits for each user, there will be much less of an incentive to purchase from fast fashion brands. Instead of contributing to fast fashion due to lack of knowledge on what to purchase, users will now have a stronger idea of their next clothing item because they have a personalized outfit recommendation. With all the pros and the cons considered, we believe that our application will benefit society and make the world a better place!
+
+## Tentative Timeline
+Meet every Thursday at 8:30pm to recap week + plan for next week
+
+**Week 3**
+- Finish proposal
+- Research on image classification
+- Start cleaning data
+
+**Week 4**
+*1/27- Project Proposal due*
+- Finish cleaning data
+- Start classification
+- Get basic webapp outline set up
+
+**Week 5**
+- Finish up Image classification
+- Start building Recommendation system
+- Start building out space for random image generation on webapp, like/dislike button for user to push
+
+**Week 6**
+*2/10- Project Update 1 Due*
+- Continue working on recommendation system
+- Finish space for random image generation on webapp
+
+**Week 7**
+*(Goal: Achieve Partial Success)*
+- Finish recommendation system code for images that already exist in database
+
+**Week 8**
+*2/24- Project Update 2 Due*
+- Add space on webapp for user to upload their pictures
+- Begin adjusting recommendation system code for images that user uploads
+- Begin building model to categorize images user uploads
+
+**Week 9**
+- Finish recommendation system code for images that user uploads
+- Finish model to categorize images user uploads
+- Put finishing touches on webapp
+
+**Week 10**
+*(Goal: Achieve Full Success)*
+*3/9- Project Presentations Due*
+- Finish blog post
