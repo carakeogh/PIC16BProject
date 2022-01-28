@@ -17,12 +17,10 @@ Full Success:
 We will consider our project to be fully successful if we can (1) create a model which identifies the user’s style preferences from the randomly generated outfits, (2) allow the user to upload pictures of their own clothes through the webapp, (3) use an algorithm to appropriately categorize the images provided by the user, and (4) recommend an outfit from the user-provided images. 
 
 ## Resources Required
-We believe that the only resource we will need to complete our project is data. This is because training and testing data is required to build and implement our machine learning/image classification algorithms and recommendator system. Further, we plan to use datasets that contain a wide variety of images in clothes and accessories so that our application can account for more unique styles and clothing that might be less popular or prevalent in the world. 
+We believe that the only resource we will need to complete our project is data. This is because training and testing data is required to build and implement our machine learning/image classification algorithms and recommendator system. Further, we plan to use a dataset that contain a wide variety of images in clothes and accessories so that our application can account for more unique styles and clothing that might be less popular or prevalent in the world. 
 
-Here are a few inks to some potential datasets that we plan to use:
+Here is the link to the dataset that we plan to use:
 - https://www.kaggle.com/paramaggarwal/fashion-product-images-dataset
-- https://www.kaggle.com/agrigorev/clothing-dataset-full
-- https://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html
 
 ## Tools and Skills Required
 Since our entire program’s function is to categorize unique clothing items and recommend outfits accordingly, we will undoubtedly need some sort of image classification algorithm. Most of these algorithms use convoluted neural networks to assist them in accurately predicting unknown/new graphics. Additionally, we will need to implement some sort of program that outputs a visualization of recommended outfits to the user. However, before we can even implement these visualizations, we need to first design a machine learning algorithm that accurately predicts the user’s style preference based on their likes/dislikes of pre-generated outfits or on their own uploaded pictures. 
