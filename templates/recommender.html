@@ -1,12 +1,23 @@
 <!doctype html>
+
 <title>Recommender</title>
 
-<form method="post">
-    <label for="model">Do you like this article of clothing?</label>
-    <input type="radio" name="style" id="yes" value="yes">
-    <label for="yes">Yes</label>
-    <input type="radio" name="style" id="no" value="no">
-    <label for="No">No</label>
-    <br>
-    <input type="submit" value="Submit form">
+
+{% block content %}
+
+<form method = "post">
+    <label for = "model">Do you like this article of clothing?</label>
+    <br> <br>
+
+    <input type = "radio" name = "style" id = "yes" value = "yes">
+    <label for = "yes">Yes</label>
+    <br> <br>
+
+    <input type = "radio" name = "style" id = "no" value = "no">
+    <label for = "No">No</label>
+    <br> <br>
+
+    <input type = "submit" value = "Next">
 </form>
+
+{% endblock %}
