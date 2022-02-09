@@ -14,3 +14,11 @@ def start():
             return render_template("start.html", guru=request.form["guru"])
         except:
             return render_template("start.html")
+
+@app.route("/hi/")
+def hi():
+    return render_template("hi.html")
+
+@app.route("/recommender/")
+def recommend():
+    return render_template("recommender.html")
