@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Homepage</title>
+
+{% block header %}
+  <h1>{% block title %}Welcome to The Drip Gurus Homepage!{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+      <label for="name">What is your name?</label>
+      <input name="name" id="name">
+      <br>
+      <input type="submit" value="Submit form">
+  </form>
+{% endblock %}
