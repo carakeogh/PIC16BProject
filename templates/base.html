@@ -1,21 +1,17 @@
 <!doctype html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<link rel = "stylesheet" href="{{ url_for('static', filename = 'styles.css') }}">
+<h1>{% block title %}The Drip Gurus Website{% endblock %}</h1>
 
-<title>{% block title %}{% endblock %} - The Drip Gurus Website</title>
-<nav>
-  <h1>The Drip Gurus Outfit Recommendation System</h1>
-  <!-- <b>Navigation:</b> -->
-  <ul>
-    <li><a href="{{ url_for('homepage') }}">Homepage/a></li>
-    <li><a href="{{ url_for('start')}}">Start</a></li>
-    <li><a href="{{ url_for('hi') }}">Hi</a></li>
-    <li><a href="{{ url_for('recommender') }}">Recommender</a></li>
-  </ul>
-</nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% block content %}{% endblock %}
-</section>
+<body>
+{% block content %}
+  <p>Welcome to our outfit recommendation system!<br>
+  In this webapp, we will recommend outfit for you based on your preferences.</p>
+
+  <p>CLick <a href="/homepage/">here</a> to go to our homepage.
+
+
+{% endblock %}
+
+</body>
+</html>

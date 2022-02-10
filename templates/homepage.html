@@ -9,12 +9,26 @@
 {% block content %}
   <form method = "post">
       <label for = "name">What is your name?</label>
-      <br> <br>
-
       <input name = "name" id = "name">
-
       <br> <br>
+      <label for="guru">Would you like to enter our outfit recommendation program?</label>
+      <input type="radio" name="guru" id="yes" value="yes">
+      <label for="yes">Yes</label>
+      <input type="radio" name="guru" id="no" value="no">
+      <label for="No">No</label>
+      <br><br>
 
       <input type = "submit" value = "Next">
   </form>
-{% endblock %}
+
+  {% if name %}
+  <br>
+  {% if guru == "yes" %}
+  <b>Hello {{name}}!</b>
+  Please click <a href="/recommender/{{name}}/">here</a> to go to your customized recommender page.
+  {% else %}
+  <b>Please click <a href="/">here</a> to go back to our homeopage.</b>
+  {% endif %}
+  {% endif %}
+  {% endblock %}
+
