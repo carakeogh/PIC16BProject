@@ -1,0 +1,11 @@
+* {
+    background: repeating-linear-gradient(
+        to right,
+        #aed8ff,
+        #aed8ff 10px,
+        #77c8ff 10px,
+        #77c8ff 20px
+    );
+
+
+}
