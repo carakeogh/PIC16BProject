@@ -6,6 +6,29 @@
         #77c8ff 10px,
         #77c8ff 20px
     );
-
-
+    text-align: center;
 }
+
+body { 
+    border-style: solid;
+    border-width: thin;
+    border-color: white;
+    border-radius: 5px;
+}
+
+h1 {
+    color: rgb(12, 12, 53);
+    font-family: Monaco, monospace;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+a:link, a:visited {
+    background-color: white;
+    color: purple;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
