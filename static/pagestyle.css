@@ -1,4 +1,8 @@
 * {
+    text-align: center;
+}
+
+body {
     background: repeating-linear-gradient(
         to right,
         #aed8ff,
@@ -6,14 +10,6 @@
         #77c8ff 10px,
         #77c8ff 20px
     );
-    text-align: center;
-}
-
-body { 
-    border-style: solid;
-    border-width: thin;
-    border-color: white;
-    border-radius: 5px;
 }
 
 h1 {
@@ -24,7 +20,7 @@ h1 {
 }
 
 a:link, a:visited {
-    background-color: white;
+    background-color: white !important;
     color: purple;
     padding: 14px 25px;
     text-align: center;
@@ -33,11 +29,11 @@ a:link, a:visited {
   }
 
   input[type=text]:focus {
-      background-color: lightslategray;
+      background-color: lightslategray !important;
   }
 
   input[type=submit] {
-    background-color: #77c8ff;
+    background-color: #77c8ff !important;
     border: none;
     color: black;
     padding: 16px 32px;
