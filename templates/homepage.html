@@ -1,6 +1,8 @@
 <!doctype html>
-
-<title>Homepage</title>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
+  <title>Homepage</title>
+</head>
 
 {% block header %}
   <h1>{% block title %}Welcome to The Drip Gurus Homepage!{% endblock %}</h1>
@@ -27,7 +29,7 @@
   <b>Hello {{name}}!</b>
   Please click <a href="/recommender/{{name}}/">here</a> to go to your customized recommender page.
   {% else %}
-  <b>Please click <a href="/">here</a> to go back to our homeopage.</b>
+  <b>Please click <a href="/">here</a> to go back to our homepage.</b>
   {% endif %}
   {% endif %}
   {% endblock %}

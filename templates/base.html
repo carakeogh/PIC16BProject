@@ -1,16 +1,16 @@
 <!doctype html>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
+</head>
 
 <h1>{% block title %}The Drip Gurus Website{% endblock %}</h1>
 
 <body>
 {% block content %}
   <p>Welcome to our outfit recommendation system!<br>
-  In this webapp, we will recommend outfit for you based on your preferences.</p>
+  In this webapp, we will recommend an outfit for you based on your preferences.</p>
 
-  <p>CLick <a href="/homepage/">here</a> to go to our homepage.
-
-
+  <p>Click <a href="/homepage/">here</a> to go to our homepage.
 {% endblock %}
 
 </body>

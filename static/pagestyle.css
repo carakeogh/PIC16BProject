@@ -1,0 +1,50 @@
+* {
+    text-align: center;
+}
+
+body {
+    background: repeating-linear-gradient(
+        to right,
+        #aed8ff,
+        #aed8ff 10px,
+        #77c8ff 10px,
+        #77c8ff 20px
+    );
+}
+
+h1 {
+    color: rgb(12, 12, 53);
+    font-family: Monaco, monospace;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+a:link, a:visited {
+    background-color: white !important;
+    color: purple;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  input[type=text]:focus {
+      background-color: lightslategray !important;
+  }
+
+  input[type=submit] {
+    background-color: #77c8ff !important;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
