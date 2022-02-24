@@ -9,21 +9,26 @@
 
     <label for="type">What type of outfit you would like us to recommend?</label>
     <br>
-    <label><input type="radio" name="type" value="Topwear">Topwear</label>
+    <label><input type="radio" name="type1" value="Topwear">Topwear</label>
     <br>
-    <label><input type="radio" name="type" value="Bottomwear">Bottomwear</label>
+    <label><input type="radio" name="type1" value="Bottomwear">Bottomwear</label>
     <br>
-    <label><input type="radio" name="type" value="Shoes">Shoes</label>
+    <label><input type="radio" name="type1" value="Shoes">Shoes</label>
     <br>
-    <label><input type="radio" name="type" value="Belts">Belts</label>
+    <label><input type="radio" name="type1" value="Belts">Belts</label>
     <br>
-    <label><input type="radio" name="type" value="Socks">Socks</label>
+    <label><input type="radio" name="type1" value="Socks">Socks</label>
     <br>
-    <label><input type="radio" name="type" value="Dress">Dress</label>
+    <label><input type="radio" name="type1" value="Dress">Dress</label>
     <br><br>
 
     <input type = "submit" value = "Next">
 </form>
 
+
+{% if type1 %}
+<br>
+Jump to the <a href="/{{type1}}/">recommender page</a>.
+{% endif %}
 {% endblock %}
 

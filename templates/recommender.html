@@ -5,11 +5,13 @@
   </head>
 
 {% block content %}
-
 <form method = "post">
+  <p>
+    {% for m in images %}
     <label for = "model">Do you like this article of clothing?</label>
     <br> <br>
-
+    <img src= {{m}}>
+    <br>
     <input type = "radio" name = "style" id = "yes" value = "yes">
     <label for = "yes">Yes</label>
     <br> <br>
@@ -17,6 +19,8 @@
     <input type = "radio" name = "style" id = "no" value = "no">
     <label for = "No">No</label>
     <br> <br>
+  </p>
+  {% endfor %}
 
     <input type = "submit" value = "Next">
 </form>
