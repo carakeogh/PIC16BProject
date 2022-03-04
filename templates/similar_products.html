@@ -1,0 +1,16 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
+    <title>Similar Products</title>
+  </head>
+
+{% block content %}
+
+<p> 
+    Based on your choices, here are some similar products that you might like! 
+    
+</p>
+
+Click <a href="/recommender/{{name}}/">here</a> to choose another article of clothing you want us to recommend!
+
+{% endblock %}

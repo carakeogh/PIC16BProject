@@ -22,4 +22,3 @@ def randomSelect(df, k):
     Randomly select k items from a data frame 
     '''
     return random.sample(set(df["link"]), k)
-
