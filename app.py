@@ -34,7 +34,10 @@ def chooseType(name):
         except:
             return render_template("chooseType.html")
 
-
+#if request.method == "POST"
+#   if 'Next' in request.form:
+#       fave_img = request.form["type1"]
+#       return recommended_outfit(fave_img)
 
 @app.route("/<type1>/", methods = ["POST", "GET"])
 def recommender(type1):
@@ -44,6 +47,7 @@ def recommender(type1):
     if request.method == "GET":
         return render_template("recommender.html", images = images)
 
+  
     else:
         return render_template("recommender.html", images = images)
 

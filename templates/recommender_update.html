@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
+    <title>Recommender Updated</title>
+  </head>
+
+{% block content %}
+<form method = "post">
+  <p>
+    <label for = "model">Which article of clothing do you like the best?</label>
+    <br> <br>
+    <br>
+    <label><input type="radio" name="type1" value="Image1">Image1</label>
+    <br>
+    <label><input type="radio" name="type1" value="Image2">Image2</label>
+    <br>
+    <label><input type="radio" name="type1" value="Image3">Image3</label>
+    <br>
+    <label><input type="radio" name="type1" value="Image4">Image4</label>
+    <br>
+    <label><input type="radio" name="type1" value="Image5">Image5</label>
+    <br> <br>
+  </p>
+
+    <input type = "submit" value = "Next">
+</form>
+
+{% if type1 %}
+<br>
+Jump to the <a href="/{{type1}}/">similar products page</a>.
+{% endif %}
+{% endblock %}
+
+
