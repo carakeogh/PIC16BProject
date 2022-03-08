@@ -2,15 +2,36 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
     <title>Similar Products</title>
-  </head>
+</head>
 
 {% block content %}
 
-<p> 
-    Based on your choices, here are some similar products that you might like! 
-    
-</p>
+  <p> 
+    Based on your choices {{name}}, here are some similar products that you might like!   
+  </p>
 
-Click <a href="/recommender/{{name}}/">here</a> to choose another article of clothing you want us to recommend!
+  <form method = "post">
+    
+    <label for = "like">Do you want to pick another article of clothing?</label>
+    <input type = "radio" name = "repeat" id = "yes" value = "yes">
+    <label for = "yes">Yes</label>
+    <input type="radio" name = "repeat" id = "no" value = "no">
+    <label for = "no">No</label>
+    <br><br>
+
+    <input type = "submit" value = "Next">
+
+  </form>
+
+  <br>
+
+  {% if repeat == "yes" %}
+
+  <b>Please click <a href="/recommender/">here</a> to pick another clothing type!</b>
+
+  {% else %}
+  <b>Please click <a href = "/">here</a> to go back to our homepage.</b>
+
+  {% endif %}
 
 {% endblock %}

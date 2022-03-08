@@ -22,7 +22,6 @@ def homepage():
             return render_template('homepage.html')
 
 
-
 @app.route("/recommender/<name>/", methods = ["POST", "GET"])
 def chooseType(name):
     if request.method == "GET":
@@ -34,10 +33,6 @@ def chooseType(name):
         except:
             return render_template("chooseType.html")
 
-#if request.method == "POST"
-#   if 'Next' in request.form:
-#       fave_img = request.form["type1"]
-#       return recommended_outfit(fave_img)
 
 @app.route("/<type1>/", methods = ["POST", "GET"])
 def recommender(type1):
@@ -47,20 +42,21 @@ def recommender(type1):
     if request.method == "GET":
         return render_template("recommender.html", images = images)
 
-  
     else:
-        return render_template("recommender.html", images = images)
+        try:
+            return render_template("recommender.html", style = request.form['style'])
+        except:
+            return render_template("recommender.html", images = images)
 
 
-# @app.route("/similar_products/", method = ["POST", "GET"])
-# def similar_products(style):
+@app.route("/similarproducts/<style>/", methods = ["POST", "GET"])
+def similar_products(style):
 
-    #if request.method == "GET":
-        #return render_template("similar_products.html", original = style)
-      
-    #else:
-        #try:
-           # return render_template("similar_products.html", original = ) 
-       # except:
-            #return render_template("similar_products.html")
-
+    if request.method == "GET":
+        return render_template("similar_products.html")
+    
+    else:
+        try:
+            return render_template("similar_products.html", repeat = request.form['repeat'])
+        except:
+            return render_template("similar_products.html")
