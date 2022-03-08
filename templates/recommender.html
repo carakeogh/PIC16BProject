@@ -7,18 +7,18 @@
 {% block content %}
 <form method = "post">
   <p>
+    <label for = "model">Which clothing item do you like the best? Pick one Option!</label>
+
     {% for m in images %}
-    <label for = "model">Do you like this article of clothing?</label>
     <br> <br>
-    <img src= {{m}}>
+    <img src = {{m}}>
     <br>
-    <input type = "checkbox" name = "style" id = "yes" value = "yes">
-    <label for = "yes">Yes</label>
+    <input type = "radio" name = "style" id = "yes" value = "yes">
     <br> <br>
 
-    <input type = "checkbox" name = "style" id = "no" value = "no">
+    <!-- <input type = "checkbox" name = "style" id = "no" value = "no">
     <label for = "No">No</label>
-    <br> <br>
+    <br> <br> -->
   </p>
   {% endfor %}
 

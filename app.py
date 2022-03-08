@@ -42,7 +42,7 @@ def chooseType(name):
 @app.route("/<type1>/", methods = ["POST", "GET"])
 def recommender(type1):
     df = functions.getData(type1)
-    images = functions.randomSelect(df, 10)
+    images = functions.randomSelect(df, 5)
 
     if request.method == "GET":
         return render_template("recommender.html", images = images)
@@ -52,11 +52,15 @@ def recommender(type1):
         return render_template("recommender.html", images = images)
 
 
-# @app.route("/similar_products/", method = ["POST", "GET"])
-#def similar_products(style):
+@app.route("/similar_products/", method = ["POST", "GET"])
+def similar_products(style):
 
- #   if request.method == "GET":
-  #      return render_template("similar_products.html")
+    if request.method == "GET":
+        return render_template("similar_products.html")
+      
+    else:
+        try:
+            return render_template("similar_products.html", original = style) 
+        except:
+            return render_template("similar_products.html")
 
-   # else:
-    #    return render_template("similar_products.html")
