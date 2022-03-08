@@ -4,6 +4,12 @@
 **Project Topic:** Outfit recommendation webapp <br>
 **Group Members:** Cara Keogh, Patrick Wang, Yu-Hsin Huang <br>
 
+## Questions for Professor Chodrow:
+
+1. Is there anyway to make our website more user-friendly?
+2. Is there anything we can do to improve our recommendation algorithm in terms of efficiency?
+3. How can we connect our recommendation algorithm in the .ipynb file to our app.py file? 
+
 ## Abstract
 This project aims to address the problem of people not being able to decide what to wear. Whether they don’t want to spend the time styling themselves or they aren’t sure what items work well together, our model will help them fully utilize their closet. The overall approach to accomplishing this task is to randomly generate outfits based on a large image dataset of clothes and accessories, get user feedback on the outfits, and ultimately produce an outfit recommendation for the user based on their style preferences.
 

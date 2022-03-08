@@ -52,15 +52,15 @@ def recommender(type1):
         return render_template("recommender.html", images = images)
 
 
-@app.route("/similar_products/", method = ["POST", "GET"])
-def similar_products(style):
+# @app.route("/similar_products/", method = ["POST", "GET"])
+# def similar_products(style):
 
-    if request.method == "GET":
-        return render_template("similar_products.html")
+    #if request.method == "GET":
+        #return render_template("similar_products.html", original = style)
       
-    else:
-        try:
-            return render_template("similar_products.html", original = style) 
-        except:
-            return render_template("similar_products.html")
+    #else:
+        #try:
+           # return render_template("similar_products.html", original = ) 
+       # except:
+            #return render_template("similar_products.html")
 
