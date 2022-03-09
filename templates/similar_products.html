@@ -7,8 +7,16 @@
 {% block content %}
 
   <p> 
-    Based on your choices {{name}}, here are some similar products that you might like!   
+    Based on your choices, here are some similar products that you might like!   
   </p>
+
+  {% for i in images %}
+  <br> 
+  <br>
+  <img src = "data:image/png;base64, {{ i }}"}>
+  <br>
+  <br>
+  {% endfor %}
 
   <form method = "post">
     

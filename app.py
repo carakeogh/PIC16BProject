@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 import matplotlib.pyplot as plt
 import numpy as np
 import functions
+import algorithm
 
 app = Flask(__name__)
 
@@ -52,8 +53,15 @@ def recommender(type1):
 @app.route("/similarproducts/<style>/", methods = ["POST", "GET"])
 def similar_products(style):
 
+    files = algorithm.start(style)
+    data = algorithm.model(files)
+    imgs = algorithm.recommended_outfit(style, data)
+    plot = algorithm.plot(imgs)
+
+    # insert/run recommendation algorithm here 
+
     if request.method == "GET":
-        return render_template("similar_products.html")
+        return render_template("similar_products.html", images = plot)
     
     else:
         try:
