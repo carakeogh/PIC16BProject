@@ -6,23 +6,25 @@
 
 {% block content %}
 <form method = "post">
-  <p>
+
     <label for = "model">Which clothing item do you like the best? Pick one Option!</label>
 
     {% for m in images %}
     <br> <br>
     <img src = {{m}}>
     <br>
-    <input type = "radio" name = "style" id = "yes" value = "yes">
-    <br> <br>
-
-    <!-- <input type = "checkbox" name = "style" id = "no" value = "no">
-    <label for = "No">No</label>
-    <br> <br> -->
-  </p>
-  {% endfor %}
+    <input type = "radio" name = "style" value = "fav_image">
+    <br>
+    {% endfor %}
 
     <input type = "submit" value = "Next">
 </form>
 
+{% if style %}
+<br>
+Click <a href = "/similarproducts/{{style}}/">here</a> to go to the Similar Products page!
+
+{% endif %}
+
 {% endblock %}
+
