@@ -23,6 +23,7 @@ def start(a):
     nb_closest_images = 5
 
     files = [imgs_path + x for x in os.listdir(imgs_path) if "jpg" in x]
+    # In order to reduce compilation time of the algorithm, we reduce the data to 500 images
     files = files[0:500]
 
     return files
@@ -30,30 +31,32 @@ def start(a):
 from keras import models
 
 def model(file):
+    # introduction of the model: https://medium.com/@mygreatlearning/what-is-vgg16-introduction-to-vgg16-f2d63849f615
     vgg_model = vgg16.VGG16(weights='imagenet')
+    # # remove the last layers in order to get features instead of predictions
     model = Model(inputs=vgg_model.input, outputs=vgg_model.get_layer("fc2").output)
 
-    # run images through model
+    # now we run all 500 images we extracted through model
     importedImages = []
 
     for f in file:
         filename = f
         original = load_img(filename, target_size = (224, 224))
-        numpy_image = img_to_array(original)
-        image_batch = np.expand_dims(numpy_image, axis=0)
+        numpy_image = img_to_array(original)  # since vgg16 can only process one image at a time, we train the model with 'original' first
+        image_batch = np.expand_dims(numpy_image, axis=0)  # convert the image / images into batch format
     
         importedImages.append(image_batch)
     
     images = np.vstack(importedImages)
 
-    processed_imgs = preprocess_input(images.copy())
+    processed_imgs = preprocess_input(images.copy()) # prepare the image for the VGG model
 
-    img_features = model.predict(processed_imgs)
+    img_features = model.predict(processed_imgs) # predict training data
 
-
-    cosSimilarities = cosine_similarity(img_features)
-    cos_similarities_df = pd.DataFrame(cosSimilarities, columns = file, index = file)
-
+    # now find the cosine similarities between each images
+    cosSimilarities = cosine_similarity(img_features)  
+    cos_similarities_df = pd.DataFrame(cosSimilarities, columns = file, index = file)  # store the results into a pandas dataframe
+ 
     return cos_similarities_df
 
 def recommended_outfit(img, df):

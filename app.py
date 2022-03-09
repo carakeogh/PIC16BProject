@@ -53,10 +53,10 @@ def recommender(type1):
 @app.route("/similarproducts/<style>/", methods = ["POST", "GET"])
 def similar_products(style):
 
-    files = algorithm.start(style)
-    data = algorithm.model(files)
-    imgs = algorithm.recommended_outfit(style, data)
-    plot = algorithm.plot(imgs)
+ #   files = algorithm.start(style)
+  #  data = algorithm.model(files)
+  #  imgs = algorithm.recommended_outfit(style, data)
+   #   plot = algorithm.plot(imgs)
 
     # insert/run recommendation algorithm here 
 
