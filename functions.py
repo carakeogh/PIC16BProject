@@ -22,3 +22,21 @@ def randomSelect(df, k):
     Randomly select k items from a data frame 
     '''
     return random.sample(set(df["link"]), k)
+
+
+def match(link):
+    ''' 
+    Function that take the link of the image and return its corresponding filename(string)
+    '''
+    df = pd.read_csv("styles.csv", nrows = 10000, error_bad_lines = False)
+    image_df = pd.read_csv("images.csv")
+    df['filename'] = df.apply(lambda row: str(row['id']) + ".jpg", axis = 1)
+
+    # merge images.csv and styles.csv together
+    df = pd.merge(df, image_df, on = ["filename"])
+    df = df.sample(frac = 1).reset_index(drop = True)
+    a = df[df['link'] == link]['filename']
+    a = str(a)
+    a = " ".join(a.split()[1:-4])
+
+    return a

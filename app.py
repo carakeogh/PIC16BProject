@@ -45,7 +45,7 @@ def recommender(type1):
 
     else:
         try:
-            return render_template("recommender.html", style = request.form['style'])
+            return render_template("recommender.html", style = functions.match(request.form['style']))
         except:
             return render_template("recommender.html", images = images)
 
@@ -53,13 +53,12 @@ def recommender(type1):
 @app.route("/similarproducts/<style>/", methods = ["POST", "GET"])
 def similar_products(style):
 
- #   files = algorithm.start(style)
-  #  data = algorithm.model(files)
-  #  imgs = algorithm.recommended_outfit(style, data)
-   #   plot = algorithm.plot(imgs)
+    files = algorithm.start()[1]
+    data = algorithm.model(files)
+    imgs = algorithm.recommended_outfit(algorithm.start()[0] + style, data)
+    plot = algorithm.plot(imgs)
 
-    # insert/run recommendation algorithm here 
-
+# insert/run recommendation algorithm here 
     if request.method == "GET":
         return render_template("similar_products.html", images = plot)
     
@@ -68,3 +67,5 @@ def similar_products(style):
             return render_template("similar_products.html", repeat = request.form['repeat'])
         except:
             return render_template("similar_products.html")
+
+

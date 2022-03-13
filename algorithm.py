@@ -16,17 +16,14 @@ matplotlib.use('Agg')
 from io import BytesIO
 import base64
 
-def start(a):
+def start():
     imgs_path = "/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/images/"
-
-    imgs_model_width, imgs_model_height = 224, 224
-    nb_closest_images = 5
 
     files = [imgs_path + x for x in os.listdir(imgs_path) if "jpg" in x]
     # In order to reduce compilation time of the algorithm, we reduce the data to 500 images
     files = files[0:500]
 
-    return files
+    return imgs_path, files
 
 from keras import models
 
