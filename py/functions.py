@@ -6,8 +6,8 @@ def getData(type1):
     Function that merges styles.csv and images.csv together 
     and returns a new data frame for a certain clothing type
     '''
-    df = pd.read_csv("styles.csv", nrows = 10000, error_bad_lines = False)
-    image_df = pd.read_csv("images.csv")
+    df = pd.read_csv("data/styles.csv", nrows = 10000, error_bad_lines = False)
+    image_df = pd.read_csv("data/images.csv")
     df['filename'] = df.apply(lambda row: str(row['id']) + ".jpg", axis = 1)
 
     # merge images.csv and styles.csv together
@@ -28,8 +28,8 @@ def match(link):
     ''' 
     Function that take the link of the image and return its corresponding filename(string)
     '''
-    df = pd.read_csv("styles.csv", nrows = 10000, error_bad_lines = False)
-    image_df = pd.read_csv("images.csv")
+    df = pd.read_csv("data/styles.csv", nrows = 10000, error_bad_lines = False)
+    image_df = pd.read_csv("data/images.csv")
     df['filename'] = df.apply(lambda row: str(row['id']) + ".jpg", axis = 1)
 
     # merge images.csv and styles.csv together
@@ -40,3 +40,5 @@ def match(link):
     a = " ".join(a.split()[1:-4])
 
     return a
+
+
