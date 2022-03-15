@@ -17,7 +17,7 @@ from io import BytesIO
 import base64
 
 def start():
-    imgs_path = "/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/images/"
+    imgs_path = "images"
 
     files = [imgs_path + x for x in os.listdir(imgs_path) if "jpg" in x]
     # In order to reduce compilation time of the algorithm, we reduce the data to 500 images
