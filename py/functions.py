@@ -5,7 +5,15 @@ def getData(type1):
     ''' 
     Function that merges styles.csv and images.csv together 
     and returns a new data frame for a certain clothing type
+
+    arguement:
+    type1: the certain clothing type we want the dataframe to focus on
+
+    return:
+    the cleaned dataframe focussing on type1
     '''
+
+    # read in data
     df = pd.read_csv("data/styles.csv", nrows = 10000, error_bad_lines = False)
     image_df = pd.read_csv("data/images.csv")
     df['filename'] = df.apply(lambda row: str(row['id']) + ".jpg", axis = 1)
@@ -28,6 +36,7 @@ def match(link):
     ''' 
     Function that take the link of the image and return its corresponding filename(string)
     '''
+    # read in data
     df = pd.read_csv("data/styles.csv", nrows = 10000, error_bad_lines = False)
     image_df = pd.read_csv("data/images.csv")
     df['filename'] = df.apply(lambda row: str(row['id']) + ".jpg", axis = 1)
@@ -35,8 +44,12 @@ def match(link):
     # merge images.csv and styles.csv together
     df = pd.merge(df, image_df, on = ["filename"])
     df = df.sample(frac = 1).reset_index(drop = True)
+
+    # find the corresponding filename given the link
     a = df[df['link'] == link]['filename']
+    # convert our result to a
     a = str(a)
+    # extract the filename as a string
     a = " ".join(a.split()[1:-4])
 
     return a
