@@ -1,5 +1,12 @@
+<!--
+This template is the similar products page which shows the user images they might like
+based on their preference from the recommender page. This page links to the model that 
+determines which products are most similar to the user's chosen image.
+-->
+
 <!doctype html>
 <head>
+    <!--tells page to use pagestyle.css style sheet-->
     <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
     <title>Similar Products</title>
 </head>
@@ -10,6 +17,7 @@
     Based on your choices, here are some similar products that you might like!   
   </p>
 
+  <!--prints k number of images with a high similarity score to user's chosen image-->
   {% for i in images %}
   <br> 
   <br>
@@ -19,27 +27,28 @@
   {% endfor %}
 
   <form method = "post">
-    
+    <!--button for user to select if they would like to use the program again-->
     <label for = "like">Do you want to pick another article of clothing?</label>
     <input type = "radio" name = "repeat" id = "yes" value = "yes">
     <label for = "yes">Yes</label>
     <input type="radio" name = "repeat" id = "no" value = "no">
     <label for = "no">No</label>
     <br><br>
-
+    <!--button to submit users choice-->
     <input type = "submit" value = "Next">
 
   </form>
 
   <br>
-
+  <!--If user wants to use the program again, prompts user to click the link which brings
+      them back to the recommender page to start again.-->
   {% if repeat == "yes" %}
 
   <b>Please click <a href="/recommender/">here</a> to pick another clothing type!</b>
-
+  <!--If user does not want to use the program again, prompts user to click the link which brings
+      them back to the homepage.-->
   {% else %}
   <b>Please click <a href = "/">here</a> to go back to our homepage.</b>
 
   {% endif %}
-
 {% endblock %}

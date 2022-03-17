@@ -1,5 +1,12 @@
+<!--
+This template is the recommender page which asks the user which image they like the 
+best and stores their preference. This page links to the model that randomly selects 
+and prints k number of images in the user-selected category.
+-->
+
 <!doctype html>
 <head>
+    <!--tells page to use pagestyle.css style sheet-->
     <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
     <title>Recommender</title>
   </head>
@@ -9,6 +16,7 @@
 
     <label for = "model">Which clothing item do you like the best? Pick one Option!</label>
 
+    <!--displays each image with a button to select if is the user's favorite-->
     {% for m in images %}
     <br> <br>
     <img src = {{m}}>
@@ -17,14 +25,15 @@
     <br>
     {% endfor %}
 
+    <!--Button to submit the user's choice-->
     <input type = "submit" value = "next">
 </form>
 
+<!--If the user makes a choice, prompts user to click the link to the similar_products page.-->
 {% if style %}
 <br>
+<!--links to similar_products page-->
 Click <a href = "/similarproducts/{{style}}/">here</a> to go to the Similar Products page!
-
 {% endif %}
-
 {% endblock %}
 

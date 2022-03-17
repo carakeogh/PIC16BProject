@@ -1,5 +1,11 @@
+<!--
+This template is the homepage. It asks the user for their name and if they would 
+like to use the recommender program.
+-->
+
 <!doctype html>
 <head>
+  <!--tells page to use pagestyle.css style sheet-->
   <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
   <title>Homepage</title>
 </head>
@@ -11,27 +17,32 @@
 {% block content %}
   <form method = "post">
       <label for = "name">What is your name?</label>
+      <!--input box to enter text-->
       <input name = "name" id = "name">
       <br> <br>
       <label for="guru">Would you like to enter our outfit recommendation program?</label>
+      <!--buttons to select yes or no-->
       <input type="radio" name="guru" id="yes" value="yes">
       <label for="yes">Yes</label>
       <input type="radio" name="guru" id="no" value="no">
       <label for="No">No</label>
       <br><br>
-
+      <!--Button to submit the user's input and choice-->
       <input type = "submit" value = "Next">
   </form>
 
+  <!--If user enters text and chooses yes, prints Hello "text" and prompts user 
+      to click the link to the chooseType page-->
   {% if name %}
   <br>
   {% if guru == "yes" %}
   <b>Hello {{name}}!</b>
+  <!--links to chooseType page-->
   Please click <a href="/recommender/{{name}}/">here</a> to choose what type of outfit you want us to recommend.
   {% else %}
+  <!--If user chooses no, prompts user to click the link to return to the homepage-->
   <b>Please click <a href="/">here</a> to go back to our homepage.</b>
   {% endif %}
-  
   {% endif %}
   {% endblock %}
 
