@@ -23,7 +23,7 @@ def homepage():
         except:
             return render_template('homepage.html')
 
-# choose type page
+# choose type of clothing page
 @app.route("/recommender/<name>/", methods = ["POST", "GET"])
 def chooseType(name):
     if request.method == "GET":
@@ -35,7 +35,7 @@ def chooseType(name):
         except:
             return render_template("chooseType.html")
 
-# get users' preferences
+# get users' style preferences
 @app.route("/<type1>/", methods = ["POST", "GET"])
 def recommender(type1):
     # prepare image data

@@ -1,3 +1,15 @@
+/* 
+This page determines the style of our webapp pages. 
+
+html : The overall style of the pages. Determines the font family and background.
+*    : Centers all of the text on the pages.
+h1   : Sets the style of the heading text.
+a    : Sets the style of links before and after being clicked.
+input: [type=text] sets the style of the input boxes where the user enters text.
+       [type=submit] sets the style of the buttons
+img  : Determines how images are displayed on the page.
+*/
+
 html {
     font-family: Tahoma;
     background: repeating-linear-gradient(

@@ -18,7 +18,7 @@ import base64
 
 def start():
     """
-    prepare our image data
+    This function prepares the image data. It returns an image path and the image files.
     """
     imgs_path = "data/images"
     files = [imgs_path + x for x in os.listdir(imgs_path) if "jpg" in x]
@@ -31,9 +31,9 @@ from keras import models
 
 def model(file):
     """
-    apply our outfit recommender model to file
+    This function applies the outfit recommender model to the file.
 
-    arguement:
+    argument:
     file: image data
 
     return: a dataframe containing information of the cosine similarity score of each image data
@@ -73,10 +73,11 @@ def model(file):
 
 def recommended_outfit(img, df):
     """
-    retrieve the most similar 5 products for the inputted image
+    This function retrieves the 5 most similar products to the user-selected image.
 
-    arguements:
+    arguments:
     img: image that is going to be used to find its most similar products
+    df: dataframe of images
 
     return: a list of the closest 5 images
     """
@@ -94,6 +95,15 @@ def recommended_outfit(img, df):
     return storage
 
 def plot(x):
+    """
+    This function plots the images so that the user can see them on the webapp.
+
+    argument:
+    x: 
+
+    return:
+    
+    """
     store = []
 
     for i in x:

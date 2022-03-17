@@ -1,5 +1,12 @@
+<!--
+This template inherits from base.html. It asks the user what type of clothing item they 
+would like the website to recommend by using radio buttons. It then provides a link
+to the recommender page once the user has selected a clothing type.
+-->
+
 <!doctype html>
 <head>
+    <!--tells page to use pagestyle.css style sheet-->
     <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
     <title>Choose Type</title>
 </head>
@@ -9,6 +16,7 @@
 
     <label for="type">What type of outfit you would like us to recommend?</label>
     <br>
+    <!--one button for each clothing type-->
     <label><input type="radio" name="type1" value="Topwear">Topwear</label>
     <br>
     <label><input type="radio" name="type1" value="Bottomwear">Bottomwear</label>
@@ -22,12 +30,15 @@
     <label><input type="radio" name="type1" value="Dress">Dress</label>
     <br><br>
 
+    <!--Button to submit the user's choice-->
     <input type = "submit" value = "Next">
 </form>
 
 
+<!--If user has made and submitted their choice, show link-->
 {% if type1 %}
 <br>
+ <!--link to recommender-->
 Jump to the <a href="/{{type1}}/">recommender page</a>.
 {% endif %}
 {% endblock %}
