@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 
 import matplotlib.pyplot as plt
 import numpy as np
-import functions
-import algorithm
+from py.functions import *
+from py.algorithm import *
 
 app = Flask(__name__)
 
@@ -39,16 +39,16 @@ def chooseType(name):
 @app.route("/<type1>/", methods = ["POST", "GET"])
 def recommender(type1):
     # prepare image data
-    df = functions.getData(type1)
+    df = getData(type1)
     # randomly select 5 images to get users' preferences
-    images = functions.randomSelect(df, 5)
+    images = randomSelect(df, 5)
 
     if request.method == "GET":
         return render_template("recommender.html", images = images)
 
     else:
         try:
-            return render_template("recommender.html", style = functions.match(request.form['style']))
+            return render_template("recommender.html", style = match(request.form['style']))
         except:
             return render_template("recommender.html", images = images)
 
@@ -56,13 +56,13 @@ def recommender(type1):
 @app.route("/similarproducts/<style>/", methods = ["POST", "GET"])
 def similar_products(style):
     # prepare image data
-    files = algorithm.start()[1]
+    files = start()[1]
     # run our recommender model and get cosine similarity score on each data
-    data = algorithm.model(files)
+    data = model(files)
     # get the five closest products
-    imgs = algorithm.recommended_outfit(algorithm.start()[0] + style, data)
+    imgs = recommended_outfit(start()[0] + style, data)
     # plot our result
-    plot = algorithm.plot(imgs)
+    plot = plot(imgs)
 
 
     if request.method == "GET":

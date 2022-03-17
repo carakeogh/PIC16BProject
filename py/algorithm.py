@@ -11,7 +11,7 @@ from keras.models import Model
 from keras.applications.imagenet_utils import preprocess_input
 from keras import layers, optimizers, utils
 from sklearn.metrics.pairwise import cosine_similarity
-import pandas as pd
+#import pandas as pd
 matplotlib.use('Agg')
 from io import BytesIO
 import base64
