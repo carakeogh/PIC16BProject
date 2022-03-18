@@ -13,6 +13,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 from io import BytesIO
 import base64
+matplotlib.use('Agg')
 
 
 def start():
@@ -109,20 +110,20 @@ def plot(x):
     x: the list of matplotlib images from recommended_outfit function
 
     return:
-    a list of image urls for each similar product to pass into html file 
+    a list of png codes for each similar product to pass into html file 
     """
-    store = []
+    pics = []
 
     for i in x:
-        # converts matplotlib figure into png image for html
+        # converts matplotlib figure into png image code to transfer into html 
         fig = plt.figure()
+        fig = plt.imshow(i)
         img = BytesIO()
-        fig.savefig(img, format = 'png')
+        fig.figure.savefig(img, format = 'png')
         img.seek(0)
-        plot_url = base64.b64encode(img.getvalue())
-        html = '<img src="data:image/png;base64, {}">'.format(plot_url.decode('utf-8'))
+        plot_url = base64.b64encode(img.getvalue()).decode('utf-8')
+        html = "data:image/png;base64,{}".format(plot_url)
 
-
-        store.append(html)
+        pics.append(html)
     
-    return store
+    return pics

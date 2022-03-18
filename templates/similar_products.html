@@ -17,13 +17,13 @@ determines which products are most similar to the user's chosen image.
     Based on your choices, here are some similar products that you might like!   
   </p>
 
-  <!--prints k number of images with a high similarity score to user's chosen image-->
+  <!--prints images with a high similarity score to user's chosen image-->
   {% for i in images %}
-  <br> 
-  <br>
-  <img src = {{i}}>
-  <br>
-  <br>
+    <br> 
+    <br>
+    <img src = {{i}}>
+    <br>
+    <br>
   {% endfor %}
 
   <form method = "post">

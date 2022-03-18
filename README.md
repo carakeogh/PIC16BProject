@@ -9,7 +9,7 @@ This project aims to address the problem of people not being able to find their 
 
 ## How Our Webapp Works
 Our program is delivered in the form of an online webapp.
-First, when users get into our webapp, they will see an introductory Drip Gurus Website that provides a link for users to go to the homepage of our program. The homepage then asks for users' names and asks whether users want to enter the outfit recommender program. If users show their intention to use the outfit recommender system, a welcoming text followed by a link to the recommender system will be given. Otherwise, users will be led to the introductory page. Once the users reach the recommender system page, they will first be asked to specify what type of outfit (Topwear, Bottomwear, Shoes, Belts, Socks, and Dress) they want the program to recommend. Next, our program will randomly generate five images according to the users' choice of style, and ask them which image fits their preference the most. After selecting the users' most preferred image, five similar outfit images based on their choice will be displayed to give them outfit recommendations.
+First, when users get into our webapp, they will see an introductory Drip Gurus Website that provides a link for users to go to the homepage of our program. The homepage then asks for users' names and asks whether users want to enter the outfit recommender program. If users show their intention to use the outfit recommender system, a welcoming text followed by a link to the recommender system will be given. Otherwise, users will be led to the introductory page. Once the users reach the recommender system page, they will first be asked to specify what type of outfit (Topwear, Bottomwear, Shoes, Belts, and Dress) they want the program to recommend. Next, our program will randomly generate five images according to the users' choice of style, and ask them which image fits their preference the most. After selecting the users' most preferred image, five similar outfit images based on their choice will be displayed to give them outfit recommendations.
 
 ## How to Access Our Webapp
 *Please make sure you have all packages and flask installed in your local environment before running our webapp.* <br>
@@ -22,7 +22,7 @@ First, when users get into our webapp, they will see an introductory Drip Gurus 
 5. **NOTE:** 
 - It will take a little while (~ 1 minute or so) for the algorithm to run after you choose your favorite item out of the five random images, so please be patient. 
 
-## Group Contribution Statement
+## Group Contributions Statement
 
 Cara led and facilitated the workflow throughout the project by setting up weekly meetings and outlining goals for each. She designed the majority of the CSS portion for the webpage on Flask and created the `randomSelect` function within `functions.py`. She also worked on the beginning foundations of each template within the `templates` folder/directory. 
 
