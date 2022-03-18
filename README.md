@@ -15,12 +15,15 @@ First, when users get into our webapp, they will see an introductory Drip Gurus 
 *Please make sure you have all packages and flask installed in your local environment before running our webapp.* <br>
 1. Fork this repository to your local machine. 
 2. Activate your local environment by running 'conda activate [environment]' in terminal. 
+
 3. **IMPORTANT:**
 - Set `"imgs_path"` in the `start()` function within `algorithm.py` ***TO YOUR LOCAL MACHINE'S ABSOLUTE PATH*** for the `images` folder within the `data` directory 
+- It should look something like this: ***"/.../data/images/"*** with your own local path before `/data/images/`
 
 4. Run 'export FLASK_ENV=development; flask run' to get the link for our webapp on your local device.
+
 5. **NOTE:** 
-- It will take a little while (~ 1 minute or so) for the algorithm to run after you choose your favorite item out of the five random images, so please be patient. 
+- It will take a little while (~ 1-2 minutes or so) for the algorithm to run after you choose your favorite item out of the five random images, so please be patient. 
 
 ## Group Contributions Statement
 
