@@ -14,10 +14,9 @@ def getData(type1):
     """ 
 
     # read in data
-    #df = pd.read_csv("data/styles.csv", error_bad_lines = False)
-    df = pd.read_csv("C:/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/data/styles.csv", error_bad_lines = False)
-    #image_df = pd.read_csv("data/images.csv")
-    image_df = pd.read_csv("C:/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/data/images.csv")
+    df = pd.read_csv("data/styles.csv", error_bad_lines = False)
+    image_df = pd.read_csv("data/images.csv")
+
     df['filename'] = df.apply(lambda row: str(row['id']) + ".jpg", axis = 1)
 
     # merge images.csv and styles.csv together
@@ -25,6 +24,7 @@ def getData(type1):
     df = df.sort_values('filename',ascending = True)[0:500]
 
     return df[df['subCategory'] == type1]
+
 
 
 def randomSelect(df, k):
@@ -52,11 +52,8 @@ def match(link):
     """
     
     # read in data
-    #df = pd.read_csv("data/styles.csv", error_bad_lines = False)
-    df = pd.read_csv("C:/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/data/styles.csv", error_bad_lines = False)
-
-    #image_df = pd.read_csv("data/images.csv")
-    image_df = pd.read_csv("C:/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/data/images.csv")
+    df = pd.read_csv("data/styles.csv", error_bad_lines = False)
+    image_df = pd.read_csv("data/images.csv")
 
     df['filename'] = df.apply(lambda row: str(row['id']) + ".jpg", axis = 1)
 

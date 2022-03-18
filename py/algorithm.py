@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import matplotlib
 import numpy as np
 import tensorflow as tf
-
 from keras.applications import vgg16
 from keras.preprocessing.image import load_img,img_to_array, ImageDataGenerator
 from keras.models import Model
@@ -12,22 +11,25 @@ from keras.applications.imagenet_utils import preprocess_input
 from keras import layers, optimizers, utils
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
-matplotlib.use('Agg')
 from io import BytesIO
-from io import StringIO
 import base64
+
 
 def start():
     """
     This function prepares the image data. It returns an image path and the image files.
     """
-    #imgs_path = "/data/images"
+
+    ### SET 'imgs_path' TO YOUR LOCAL MACHINE'S ABSOLUTE PATH to 'images' folder within 'data' directory ###
     imgs_path = "C:/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/data/images/"
+
     files = [imgs_path + x for x in os.listdir(imgs_path) if "jpg" in x]
-    # In order to reduce compilation time of the algorithm, we reduce the data to 500 images
+
+    # In order to reduce compilation/training time of algorithm, we reduce the data to 500 images
     files = files[0:500]
 
     return imgs_path, files
+
 
 from keras import models
 
@@ -65,31 +67,28 @@ def model(file):
 
     # predict all the data
     img_features = model.predict(processed_imgs) 
-
-
-
-    # store the results into a pandas dataframe 
-
  
     return img_features
+
 
 def recommended_outfit(data, img):
     """
     This function retrieves the 5 most similar products to the user-selected image.
 
     arguments:
+    data: stored data of model predictions from 'model()' function
     img: image that is going to be used to find its most similar products
-    df: dataframe of images
 
     return: a list of the closest 5 images
     """
     
     # now find the cosine similarities between each images
     cosSimilarities = cosine_similarity(data) 
+    # store the results into a pandas dataframe 
     cos_similarities_df = pd.DataFrame(cosSimilarities, columns = start()[1], index = start()[1])  
     
+
     # get the five closest images
-    #closest_imgs = df[img].sort_values(ascending = False)[1:6].index
     closest_imgs = cos_similarities_df[img].sort_values(ascending = False)[1:6].index
 
     storage = []
@@ -100,6 +99,7 @@ def recommended_outfit(data, img):
         storage.append(original)
 
     return storage
+
 
 def plot(x):
     """
@@ -114,13 +114,15 @@ def plot(x):
     store = []
 
     for i in x:
+        # converts matplotlib figure into png image for html
+        fig = plt.figure()
         img = BytesIO()
-        
-        plt.savefig(img)
-
+        fig.savefig(img, format = 'png')
         img.seek(0)
+        plot_url = base64.b64encode(img.getvalue())
+        html = '<img src="data:image/png;base64, {}">'.format(plot_url.decode('utf-8'))
 
-        plot_url = base64.b64encode(img.getvalue()).decode('utf8')
-        store.append(plot_url)
+
+        store.append(html)
     
     return store
