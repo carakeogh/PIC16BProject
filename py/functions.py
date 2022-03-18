@@ -10,17 +10,19 @@ def getData(type1):
     type1: the certain clothing type we want the dataframe to focus on
 
     return:
-    the cleaned dataframe focussing on type1
+    the cleaned dataframe focusing on type1
     """ 
 
     # read in data
-    df = pd.read_csv("data/styles.csv", nrows = 10000, error_bad_lines = False)
-    image_df = pd.read_csv("data/images.csv")
+    #df = pd.read_csv("data/styles.csv", error_bad_lines = False)
+    df = pd.read_csv("C:/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/data/styles.csv", error_bad_lines = False)
+    #image_df = pd.read_csv("data/images.csv")
+    image_df = pd.read_csv("C:/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/data/images.csv")
     df['filename'] = df.apply(lambda row: str(row['id']) + ".jpg", axis = 1)
 
     # merge images.csv and styles.csv together
     df = pd.merge(df, image_df, on = ["filename"])
-    df = df.sample(frac = 1).reset_index(drop = True)
+    df = df.sort_values('filename',ascending = True)[0:500]
 
     return df[df['subCategory'] == type1]
 
@@ -50,13 +52,17 @@ def match(link):
     """
     
     # read in data
-    df = pd.read_csv("data/styles.csv", nrows = 10000, error_bad_lines = False)
-    image_df = pd.read_csv("data/images.csv")
+    #df = pd.read_csv("data/styles.csv", error_bad_lines = False)
+    df = pd.read_csv("C:/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/data/styles.csv", error_bad_lines = False)
+
+    #image_df = pd.read_csv("data/images.csv")
+    image_df = pd.read_csv("C:/Users/wangp/OneDrive/Documents/GitHub/PIC16BProject/data/images.csv")
+
     df['filename'] = df.apply(lambda row: str(row['id']) + ".jpg", axis = 1)
 
     # merge images.csv and styles.csv together
     df = pd.merge(df, image_df, on = ["filename"])
-    df = df.sample(frac = 1).reset_index(drop = True)
+    df = df.sort_values('filename',ascending = True)[0:500]
 
     # find the corresponding filename given the link
     a = df[df['link'] == link]['filename']

@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 
 import matplotlib.pyplot as plt
 import numpy as np
+from io import StringIO
 from py.functions import *
 from py.algorithm import *
+
 
 app = Flask(__name__)
 
@@ -52,26 +54,24 @@ def recommender(type1):
         except:
             return render_template("recommender.html", images = images)
 
+
 # show recommended outfits
 @app.route("/similarproducts/<style>/", methods = ["POST", "GET"])
 def similar_products(style):
-    # prepare image data
+    # prepare image datafl
     files = start()[1]
     # run our recommender model and get cosine similarity score on each data
     data = model(files)
     # get the five closest products
-    imgs = recommended_outfit(start()[0] + style, data)
+    imgs = recommended_outfit(data, start()[0] + style)
     # plot our result
-    plot = plot(imgs)
-
 
     if request.method == "GET":
-        return render_template("similar_products.html", images = plot)
+        plots = plot(imgs)
+        return render_template("similar_products.html", images = plots)
     
     else:
         try:
             return render_template("similar_products.html", repeat = request.form['repeat'])
         except:
             return render_template("similar_products.html")
-
-
